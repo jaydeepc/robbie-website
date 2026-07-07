@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Robbie — The Autonomous Procurement OS for Robotics</title>
+  <meta name="description" content="Understand every part. Source every part. Hello Robbie is the autonomous procurement OS built strictly for robotics supply chains — from BoM extraction to supplier discovery, financing and contract closure." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='8' fill='%23070a12'/%3E%3Crect x='8' y='13' width='16' height='4.5' rx='2.25' fill='%233d7dff'/%3E%3Ccircle cx='16' cy='24' r='1.6' fill='%23ff7a1a'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ══ NAV ══════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Hello Robbie — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" class="bm-bg"/><rect x="8" y="13" width="16" height="4.6" rx="2.3" fill="#3d7dff"/><circle cx="16" cy="23.4" r="1.7" fill="#ff7a1a"/></svg>
+      <span class="brand-name">HELLO ROBBIE</span>
+    </a>
+    <div class="nav-links">
+      <a href="#dissect">Anatomy</a>
+      <a href="#flow">Flow</a>
+      <a href="#product">Platform</a>
+      <a href="#explorer">Components</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="btn btn-primary btn-sm nav-cta" data-open-robbie>Hello, Robbie</button>
+  </nav>
+
+  <!-- ══ HERO ═════════════════════════════════════════════════ -->
+  <header id="top" class="hero" data-nav="dark">
+    <div class="media-layer hero-media" aria-hidden="true">
+      <video data-clip autoplay muted loop playsinline preload="auto">
+        <source src="/video/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="media-veil hero-veil"></div>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-kicker" data-reveal>The autonomous procurement OS for robotics supply chains</p>
+      <h1 class="hero-title">
+        <span class="hero-line"><span>Understand every part<i class="dot">.</i></span></span>
+        <span class="hero-line"><span>Source every part<i class="dot dot-o">.</i></span></span>
+      </h1>
+      <p class="hero-sub" data-reveal style="--d:.15s">
+        Robbie finds the best suppliers and manages your procurement end-to-end —
+        from the first BoM upload to a robot at work. Less hunting, more iterating.
+      </p>
+      <div class="hero-ctas" data-reveal style="--d:.25s">
+        <button class="btn btn-primary btn-lg" data-open-robbie>Hello, Robbie</button>
+        <a class="btn btn-ghost btn-lg" href="#dissect">Explore the humanoid</a>
+      </div>
+      <p class="hero-meta mono" data-reveal style="--d:.35s">
+        12M+ SKUs monitored&ensp;·&ensp;400 manufacturing hubs&ensp;·&ensp;1.2B supply-chain parameters
+      </p>
+    </div>
+    <a class="scroll-cue" href="#dissect" aria-label="Scroll to the humanoid anatomy">
+      <span class="mono">SCROLL</span><i></i>
+    </a>
+  </header>
+
+  <!-- ══ LOGOS ════════════════════════════════════════════════ -->
+  <section id="logos" class="logos" data-nav="dark" aria-label="Trusted by">
+    <p class="logos-note mono">Trusted by teams piloting humanoids in the real world</p>
+    <div class="logo-marquee">
+      <div class="logo-row"></div>
+    </div>
+  </section>
+
+  <!-- ══ DISSECTION ═══════════════════════════════════════════ -->
+  <section id="dissect" class="dissect" data-nav="dark" aria-label="Interactive humanoid anatomy">
+    <div class="dissect-track">
+      <div class="dissect-sticky">
+        <canvas id="stage3d"></canvas>
+        <div class="focus-ring" aria-hidden="true"></div>
+        <svg class="callout-lines" aria-hidden="true"></svg>
+        <div class="callout-layer" aria-hidden="true"></div>
+        <div class="scrub-loader" aria-hidden="true"><span class="mono">Preparing the film</span><i><b></b></i></div>
+
+        <header class="dissect-head">
+          <p class="mono">Interactive anatomy · 08 systems</p>
+        </header>
+
+        <aside class="stage-card glass" aria-live="polite"></aside>
+        <aside class="holo-card glass" aria-live="polite"></aside>
+
+        <nav class="stage-rail" aria-label="Anatomy categories"></nav>
+
+        <div class="dissect-hint">
+          <span>Scroll — Robbie dissects the humanoid, system by system</span><i></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RFQ JOURNEY (pinned scroll-scrub pipeline) ═══════════ -->
+  <section id="flow" class="journey" data-nav="dark" aria-label="The RFQ journey">
+    <div class="journey-track">
+      <div class="journey-sticky">
+        <div class="media-layer" aria-hidden="true">
+          <video data-clip autoplay muted loop playsinline preload="metadata">
+            <source src="/video/journey.mp4" type="video/mp4" />
+          </video>
+          <div class="media-veil journey-veil"></div>
+        </div>
+
+        <header class="journey-head">
+          <p class="mono j-kicker">The RFQ journey · full value stream</p>
+          <h2 class="j-title">From part intelligence to procurement confidence.</h2>
+        </header>
+
+        <div class="journey-rail-wrap">
+          <div class="journey-rail"></div>
+        </div>
+
+        <div class="journey-foot">
+          <span class="j-count mono">01 / 09</span>
+          <span class="j-bar"><i></i></span>
+          <span class="j-hint mono">Scroll — Robbie clears every gate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PILLARS · HOW ROBBIE WORKS (3 acts, 3 films, live cards) ═ -->
+  <section id="pillars" class="pillars" data-nav="dark">
+    <div class="pillars-track">
+      <div class="pillars-sticky">
+        <div class="act-media on" data-act="0" aria-hidden="true">
+          <video data-clip autoplay muted loop playsinline preload="metadata">
+            <source src="/video/act-understand.mp4" type="video/mp4" />
+          </video>
+          <div class="media-veil act-veil"></div>
+        </div>
+        <div class="act-media" data-act="1" aria-hidden="true">
+          <video data-clip autoplay muted loop playsinline preload="metadata">
+            <source src="/video/act-source.mp4" type="video/mp4" />
+          </video>
+          <div class="media-veil act-veil"></div>
+        </div>
+        <div class="act-media" data-act="2" aria-hidden="true">
+          <video data-clip autoplay muted loop playsinline preload="metadata">
+            <source src="/video/act-deploy.mp4" type="video/mp4" />
+          </video>
+          <div class="media-veil act-veil act-veil-light"></div>
+        </div>
+
+        <header class="pillars-head"><p class="mono">How Robbie works · three acts</p></header>
+
+        <div class="pillar-slides">
+          <div class="pillar-slide on">
+            <p class="mono pillar-k">Act 01 · Part intelligence</p>
+            <h3 class="pillar-word">Understand</h3>
+            <p class="pillar-line">Robbie reads the machine — every sensor, actuator and cell — and shows you what each part is, why it matters, and what it should cost.</p>
+            <div class="pillar-steps"><span>Scan the machine</span><span>Draft the smart BoM</span><span>Price every part</span></div>
+          </div>
+          <div class="pillar-slide">
+            <p class="mono pillar-k">Act 02 · Supplier intelligence</p>
+            <h3 class="pillar-word">Source</h3>
+            <p class="pillar-line">Verified suppliers, structured RFQs, normalized quotes and compliance files — the entire buying motion in one place.</p>
+            <div class="pillar-steps"><span>Match verified suppliers</span><span>Issue RFQs in one click</span><span>Compare true landed cost</span></div>
+          </div>
+          <div class="pillar-slide">
+            <p class="mono pillar-k">Act 03 · Deployment intelligence</p>
+            <h3 class="pillar-word">Deploy</h3>
+            <p class="pillar-line">Financing, contracts, site readiness and spares strategy — Robbie carries the project through to a robot at work.</p>
+            <div class="pillar-steps"><span>Model the financing</span><span>Clear compliance gates</span><span>Plan go-live and spares</span></div>
+          </div>
+        </div>
+
+        <div class="act-cards">
+          <button class="act-card a-left is-land" data-act="0" data-tab="bom" style="--depth:0.7;--rot:-5deg" aria-label="Open Smart BoM in the command center">
+            <img src="/img/cards/understand-scan.jpg" alt="Robbie part scan intelligence card" />
+            <span class="ac-cap"><i></i>Part scan → live intelligence<em>View in command center →</em></span>
+          </button>
+          <button class="act-card a-right is-port" data-act="0" data-tab="bom" style="--depth:1.15;--rot:4deg" aria-label="Open Smart BoM in the command center">
+            <img src="/img/cards/understand-bom.jpg" alt="Smart BoM intake card" />
+            <span class="ac-cap"><i></i>Smart BoM intake<em>View in command center →</em></span>
+          </button>
+          <button class="act-card a-left is-land" data-act="1" data-tab="trust" style="--depth:0.8;--rot:-4deg" aria-label="Open the supplier trust graph">
+            <img src="/img/cards/source-trust.jpg" alt="Supplier trust graph card" />
+            <span class="ac-cap"><i></i>Supplier trust graph<em>View in command center →</em></span>
+          </button>
+          <button class="act-card a-right is-port" data-act="1" data-tab="quotes" style="--depth:1.2;--rot:5deg" aria-label="Open quote comparison">
+            <img src="/img/cards/source-quotes.jpg" alt="Quote comparison card" />
+            <span class="ac-cap"><i></i>Quote comparison<em>View in command center →</em></span>
+          </button>
+          <button class="act-card a-left is-land" data-act="2" data-tab="deploy" style="--depth:0.75;--rot:-4deg" aria-label="Open deployment readiness">
+            <img src="/img/cards/deploy-golive.jpg" alt="Deployment readiness card" />
+            <span class="ac-cap"><i></i>Deployment readiness<em>View in command center →</em></span>
+          </button>
+          <button class="act-card a-right is-port" data-act="2" data-tab="finance" style="--depth:1.1;--rot:5deg" aria-label="Open financing options">
+            <img src="/img/cards/deploy-finance.jpg" alt="Financing options card" />
+            <span class="ac-cap"><i></i>Financing options<em>View in command center →</em></span>
+          </button>
+        </div>
+
+        <div class="act-progress" aria-hidden="true">
+          <span class="ap-seg" data-act="0"><b>Understand</b><i></i></span>
+          <span class="ap-seg" data-act="1"><b>Source</b><i></i></span>
+          <span class="ap-seg" data-act="2"><b>Deploy</b><i></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ METRICS ══════════════════════════════════════════════ -->
+  <section id="metrics" class="metrics section-pad">
+    <div class="wrap metrics-grid">
+      <div class="metric" data-reveal><div class="metric-num"><span data-count="12">0</span><em>M+</em></div><p>SKUs monitored in real time</p></div>
+      <div class="metric" data-reveal style="--d:.08s"><div class="metric-num"><span data-count="400">0</span></div><p>specialized manufacturing hubs</p></div>
+      <div class="metric" data-reveal style="--d:.16s"><div class="metric-num"><span data-count="1.2" data-decimals="1">0</span><em>B</em></div><p>supply-chain parameters evaluated</p></div>
+      <div class="metric" data-reveal style="--d:.24s"><div class="metric-num"><span data-count="14">0</span><em>M</em></div><p>ops per second on Robbie Core</p></div>
+    </div>
+  </section>
+
+  <!-- ══ PRODUCT ══════════════════════════════════════════════ -->
+  <section id="product" class="product section-pad">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="sec-kicker mono">The buyer command center</p>
+        <h2 class="sec-title">A boardroom-ready view of<br />every humanoid decision.</h2>
+        <p class="sec-sub">One workspace runs the pilot: “Warehouse humanoid pilot” — from smart BoM to deployment readiness.</p>
+      </div>
+
+      <div class="browser" data-reveal style="--d:.1s">
+        <div class="browser-bar">
+          <span class="b-dots"><i></i><i></i><i></i></span>
+          <span class="b-url mono">app.hellorobbie.com/command-center</span>
+          <span class="b-user mono">WH-PILOT-01</span>
+        </div>
+
+        <div class="mock-tabs" role="tablist">
+          <button data-tab="command" class="on" role="tab" aria-selected="true">Command Center</button>
+          <button data-tab="bom" role="tab" aria-selected="false">Smart BoM Intake</button>
+          <button data-tab="trust" role="tab" aria-selected="false">Supplier Trust Graph</button>
+          <button data-tab="rfq" role="tab" aria-selected="false">RFQ Builder</button>
+          <button data-tab="quotes" role="tab" aria-selected="false">Quote Comparison</button>
+          <button data-tab="compliance" role="tab" aria-selected="false">Compliance Vault</button>
+          <button data-tab="finance" role="tab" aria-selected="false">Financing Layer</button>
+          <button data-tab="deploy" role="tab" aria-selected="false">Deployment Readiness</button>
+        </div>
+
+        <div class="mock-body">
+          <!-- Command Center -->
+          <div class="mock-panel on" data-panel="command">
+            <div class="mp-head">
+              <div><h4>Warehouse humanoid pilot</h4><p class="mono">2 humanoids · tote picking + trailer unload · Rotterdam DC</p></div>
+              <span class="chip-status ok">On track · Stage 4 of 9</span>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><p class="mono">BUDGET USED</p><strong>62%</strong><span class="bar"><i style="width:62%"></i></span></div>
+              <div class="kpi"><p class="mono">SUPPLIERS SHORTLISTED</p><strong>14</strong><span class="kpi-sub">across 9 subsystems</span></div>
+              <div class="kpi"><p class="mono">OPEN RFQS</p><strong>6</strong><span class="kpi-sub">2 closing this week</span></div>
+              <div class="kpi"><p class="mono">PROGRAM RISK</p><strong class="ok-text">Low</strong><span class="kpi-sub">1 watch item</span></div>
+            </div>
+            <div class="mp-cols">
+              <div class="mp-col">
+                <p class="mp-label mono">PROCUREMENT PIPELINE</p>
+                <div class="row-line"><span>Dexterous hands</span><span class="chip-status warn">Quotes in review</span></div>
+                <div class="row-line"><span>Battery packs</span><span class="chip-status ok">Compliance cleared</span></div>
+                <div class="row-line"><span>Knee actuators</span><span class="chip-status info">RFQ sent · 4 suppliers</span></div>
+                <div class="row-line"><span>Edge compute</span><span class="chip-status ok">Contract drafting</span></div>
+                <div class="row-line"><span>LiDAR units</span><span class="chip-status warn">Export review</span></div>
+              </div>
+              <div class="mp-col">
+                <p class="mp-label mono">ROBBIE · LATEST SIGNALS</p>
+                <div class="feed-line"><i class="fd warn"></i>Supply alert: NdFeB magnet volatility detected across 3 regions — alternates staged.</div>
+                <div class="feed-line"><i class="fd blue"></i>A new Tier 1 actuator supplier matches your warehouse bot architecture.</div>
+                <div class="feed-line"><i class="fd blue"></i>Precision degradation observed in brushless DC motors after 50k cycles — spec updated.</div>
+                <div class="feed-line"><i class="fd blue"></i>Financing pre-approval received: RaaS at $7.2k/mo per unit.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BoM -->
+          <div class="mock-panel" data-panel="bom">
+            <div class="mp-head"><div><h4>Smart BoM Intake</h4><p class="mono">humanoid-bom-rev4.xlsx · 214 lines parsed in 6s</p></div><span class="chip-status ok">96% auto-matched</span></div>
+            <table class="mock-table">
+              <thead><tr><th>Component</th><th>Qty</th><th>Match</th><th>Should cost</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>QDD shoulder actuator · 120 Nm</td><td>4</td><td class="mono">ACT-01</td><td>$1.8k – $5.4k</td><td><span class="chip-status ok">Matched</span></td></tr>
+                <tr><td>16-DoF dexterous hand</td><td>4</td><td class="mono">MAN-01</td><td>$6.5k – $28k</td><td><span class="chip-status ok">Matched</span></td></tr>
+                <tr><td>52 V Li-ion pack · 2.2 kWh</td><td>4</td><td class="mono">PWR-01</td><td>$2.4k – $8.9k</td><td><span class="chip-status warn">Needs review</span></td></tr>
+                <tr><td>Solid-state LiDAR puck</td><td>2</td><td class="mono">SNS-03</td><td>$450 – $6.2k</td><td><span class="chip-status ok">Matched</span></td></tr>
+                <tr><td>Custom wrist coupling, 7075-T6</td><td>8</td><td class="mono">—</td><td>RFQ to fabricators</td><td><span class="chip-status info">Gap → sourced</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Trust graph -->
+          <div class="mock-panel" data-panel="trust">
+            <div class="mp-head"><div><h4>Supplier Trust Graph</h4><p class="mono">actuators · EU + APAC · capacity ≥ 500 u/yr</p></div><span class="chip-status info">37 suppliers scored</span></div>
+            <div class="trust-wrap">
+              <svg class="trust-svg" viewBox="0 0 520 250" aria-hidden="true">
+                <g class="t-edges">
+                  <line x1="260" y1="125" x2="112" y2="58"/><line x1="260" y1="125" x2="120" y2="196"/>
+                  <line x1="260" y1="125" x2="404" y2="52"/><line x1="260" y1="125" x2="428" y2="176"/>
+                  <line x1="260" y1="125" x2="318" y2="226"/><line x1="112" y1="58" x2="120" y2="196"/>
+                  <line x1="404" y1="52" x2="428" y2="176"/>
+                </g>
+                <g class="t-node main"><circle cx="260" cy="125" r="34"/><text x="260" y="121">AxonDrive</text><text x="260" y="136" class="t-score">92</text></g>
+                <g class="t-node"><circle cx="112" cy="58" r="25"/><text x="112" y="55">KinetiCore</text><text x="112" y="69" class="t-score">88</text></g>
+                <g class="t-node"><circle cx="120" cy="196" r="23"/><text x="120" y="193">ServoTek</text><text x="120" y="207" class="t-score">84</text></g>
+                <g class="t-node"><circle cx="404" cy="52" r="22"/><text x="404" y="49">DriveForge</text><text x="404" y="63" class="t-score">81</text></g>
+                <g class="t-node warn"><circle cx="428" cy="176" r="21"/><text x="428" y="173">MotorHaus</text><text x="428" y="187" class="t-score">67</text></g>
+                <g class="t-node"><circle cx="318" cy="226" r="19"/><text x="318" y="223">Torqio</text><text x="318" y="237" class="t-score">78</text></g>
+              </svg>
+              <div class="trust-side">
+                <p class="mp-label mono">SCORE INPUTS</p>
+                <div class="row-line"><span>On-time delivery history</span><span class="mono">31%</span></div>
+                <div class="row-line"><span>Certification depth</span><span class="mono">24%</span></div>
+                <div class="row-line"><span>Deployment references</span><span class="mono">22%</span></div>
+                <div class="row-line"><span>Financial stability</span><span class="mono">14%</span></div>
+                <div class="row-line"><span>Capacity headroom</span><span class="mono">9%</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RFQ -->
+          <div class="mock-panel" data-panel="rfq">
+            <div class="mp-head"><div><h4>RFQ Builder</h4><p class="mono">RFQ-0147 · knee actuator · 200 Nm class</p></div><span class="chip-status info">Draft · ready to send</span></div>
+            <div class="mp-cols">
+              <div class="mp-col">
+                <p class="mp-label mono">SPECIFICATION</p>
+                <div class="row-line"><span>Quantity</span><span>8 units + 2 spares</span></div>
+                <div class="row-line"><span>Peak torque</span><span>≥ 200 Nm</span></div>
+                <div class="row-line"><span>Target price</span><span>$4,200 / unit</span></div>
+                <div class="row-line"><span>Delivery</span><span>Rotterdam DC · wk 38</span></div>
+                <div class="row-line"><span>Attachments</span><span class="mono">spec-rev3.pdf · CAD.step</span></div>
+              </div>
+              <div class="mp-col">
+                <p class="mp-label mono">RECIPIENTS · TRUST-RANKED</p>
+                <div class="rfq-chips">
+                  <span class="chip on">AxonDrive · 92</span><span class="chip on">KinetiCore · 88</span>
+                  <span class="chip on">ServoTek · 84</span><span class="chip on">DriveForge · 81</span>
+                  <span class="chip">Torqio · 78</span><span class="chip">MotorHaus · 67</span>
+                </div>
+                <div class="mock-cta">Send RFQ to 4 suppliers →</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quotes -->
+          <div class="mock-panel" data-panel="quotes">
+            <div class="mp-head"><div><h4>Quote Comparison</h4><p class="mono">RFQ-0147 · 4 of 4 quotes received · normalized to landed cost</p></div><span class="chip-status ok">Best value found</span></div>
+            <table class="mock-table quotes-table">
+              <thead><tr><th>Criteria</th><th class="best">AxonDrive</th><th>KinetiCore</th><th>ServoTek</th></tr></thead>
+              <tbody>
+                <tr><td>Unit price</td><td class="best">$4,050</td><td>$3,880</td><td>$4,400</td></tr>
+                <tr><td>Lead time</td><td class="best">9 wks</td><td>13 wks</td><td>10 wks</td></tr>
+                <tr><td>Warranty</td><td class="best">36 mo</td><td>24 mo</td><td>24 mo</td></tr>
+                <tr><td>Landed cost / unit</td><td class="best">$4,610</td><td>$4,890</td><td>$4,970</td></tr>
+                <tr><td>Robbie score</td><td class="best">94 · recommend</td><td>85</td><td>79</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Compliance -->
+          <div class="mock-panel" data-panel="compliance">
+            <div class="mp-head"><div><h4>Compliance Vault</h4><p class="mono">Warehouse humanoid pilot · EU deployment profile</p></div><span class="chip-status ok">87% coverage</span></div>
+            <div class="mp-cols">
+              <div class="mp-col">
+                <div class="row-line"><span>CE — Machinery Directive file</span><span class="chip-status ok">Valid</span></div>
+                <div class="row-line"><span>ISO 10218 conformity assessment</span><span class="chip-status ok">Valid</span></div>
+                <div class="row-line"><span>ISO/TS 15066 contact-force report</span><span class="chip-status warn">Expiring · 34 d</span></div>
+                <div class="row-line"><span>UN 38.3 battery transport cert</span><span class="chip-status ok">Valid</span></div>
+                <div class="row-line"><span>Site electrical permit — dock chargers</span><span class="chip-status bad">Missing</span></div>
+              </div>
+              <div class="mp-col vault-side">
+                <div class="ringbox"><svg viewBox="0 0 84 84"><circle class="ring-bg" cx="42" cy="42" r="34"/><circle class="ring-fg" cx="42" cy="42" r="34" style="stroke-dashoffset:27.8"/></svg><div><strong>87%</strong><p class="mono">DOCS VERIFIED</p></div></div>
+                <p class="vault-note">Robbie chases expiring documents automatically — suppliers get reminded before you ever notice.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financing -->
+          <div class="mock-panel" data-panel="finance">
+            <div class="mp-head"><div><h4>Financing Layer</h4><p class="mono">2 humanoids · fully integrated · 36-month horizon</p></div><span class="chip-status info">3 structures modeled</span></div>
+            <div class="fin-cards">
+              <div class="fin-card"><p class="mono">PURCHASE</p><strong>$184k</strong><span>upfront · you own the asset</span><em>+ $9.8k/yr service</em></div>
+              <div class="fin-card rec"><p class="mono">LEASE · RECOMMENDED</p><strong>$4.9k<i>/mo</i></strong><span>36 mo · buyout option</span><em>preserves capex budget</em></div>
+              <div class="fin-card"><p class="mono">ROBOTS-AS-A-SERVICE</p><strong>$7.2k<i>/mo</i></strong><span>uptime SLA included</span><em>zero maintenance risk</em></div>
+            </div>
+          </div>
+
+          <!-- Deployment -->
+          <div class="mock-panel" data-panel="deploy">
+            <div class="mp-head"><div><h4>Deployment Readiness</h4><p class="mono">go-live target · week 42 · Rotterdam DC</p></div><span class="chip-status ok">7 of 9 gates passed</span></div>
+            <div class="gantt">
+              <div class="g-row"><span>Site preparation</span><i style="--s:0%;--w:30%" class="done"></i></div>
+              <div class="g-row"><span>Safety audit + e-stop chain</span><i style="--s:18%;--w:26%" class="done"></i></div>
+              <div class="g-row"><span>Charging dock install</span><i style="--s:34%;--w:24%" class="active"></i></div>
+              <div class="g-row"><span>Operator training</span><i style="--s:52%;--w:28%"></i></div>
+              <div class="g-row"><span>Spares stocked · go-live</span><i style="--s:74%;--w:22%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COMPONENT EXPLORER ═══════════════════════════════════ -->
+  <section id="explorer" class="explorer section-pad">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="sec-kicker mono">Component intelligence</p>
+        <h2 class="sec-title">Every part carries its own<br />procurement file.</h2>
+        <p class="sec-sub">Click any component of the exploded humanoid — Robbie opens its supplier landscape, price band, lead time and risk profile.</p>
+      </div>
+      <div class="explorer-grid" data-reveal style="--d:.1s">
+        <div class="explorer-viewport">
+          <img id="exploded-still" src="/img/exploded.jpg" alt="Exploded engineering view of the humanoid" draggable="false" />
+          <div class="hotspot-layer"></div>
+          <p class="viewport-tag mono">EXPLODED VIEW · CLICK A MARKER</p>
+        </div>
+        <aside class="intel-card glass-dark"></aside>
+      </div>
+      <div class="explorer-chips" data-reveal style="--d:.15s"></div>
+    </div>
+  </section>
+
+  <!-- ══ MODULES ══════════════════════════════════════════════ -->
+  <section id="modules" class="modules section-pad">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="sec-kicker mono">The platform</p>
+        <h2 class="sec-title">Ten modules. One spine of<br />procurement truth.</h2>
+      </div>
+      <div class="module-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══ PRICING ══════════════════════════════════════════════ -->
+  <section id="pricing" class="pricing section-pad">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="sec-kicker mono">Pricing</p>
+        <h2 class="sec-title">Start free. Scale to a<br />procurement operating system.</h2>
+      </div>
+
+      <div class="bill-toggle mono" data-reveal role="group" aria-label="Billing period">
+        <button data-bill="monthly" aria-pressed="true">Monthly</button>
+        <button data-bill="yearly" aria-pressed="false">Yearly</button>
+        <span class="bill-pill" aria-hidden="true"></span>
+        <span class="save-tag">save 20%</span>
+      </div>
+
+      <div class="tier-grid">
+        <div class="tier" data-reveal>
+          <h3>Explorer</h3>
+          <p class="tier-for">For early humanoid exploration</p>
+          <div class="tier-price"><span class="cur">$</span><span class="price-num" data-m="0" data-y="0">0</span><span class="per">/mo</span></div>
+          <p class="price-note mono">per month · billed monthly</p>
+          <ul>
+            <li>Interactive humanoid anatomy</li>
+            <li>50 component lookups / month</li>
+            <li>Basic supplier directory</li>
+            <li>1 saved project</li>
+            <li>Community support</li>
+          </ul>
+          <button class="btn btn-outline" data-open-robbie>Start exploring</button>
+        </div>
+
+        <div class="tier featured" data-reveal style="--d:.08s">
+          <span class="tier-badge">Most adopted</span>
+          <h3>Procurement OS</h3>
+          <p class="tier-for">For serious buyer teams</p>
+          <div class="tier-price"><span class="cur">$</span><span class="price-num" data-m="749" data-y="599">749</span><span class="per">/mo</span></div>
+          <p class="price-note mono">per month · billed monthly</p>
+          <ul>
+            <li>Everything in Explorer</li>
+            <li>Smart BoM intake &amp; matching</li>
+            <li>RFQ automation + quote comparison</li>
+            <li>Compliance vault</li>
+            <li>Financing marketplace access</li>
+            <li>10 seats · priority support</li>
+          </ul>
+          <button class="btn btn-primary" data-open-robbie>Hello, Robbie</button>
+        </div>
+
+        <div class="tier" data-reveal style="--d:.16s">
+          <h3>Ecosystem Intelligence</h3>
+          <p class="tier-for">For enterprises, suppliers, and robotics programs</p>
+          <div class="tier-price"><span class="price-custom">Custom</span></div>
+          <p class="price-note mono">annual agreements</p>
+          <ul>
+            <li>Everything in Procurement OS</li>
+            <li>Supplier trust graph API</li>
+            <li>Private supplier network</li>
+            <li>Contract readiness reviews</li>
+            <li>Deployment planning workspace</li>
+            <li>Dedicated procurement strategist</li>
+          </ul>
+          <button class="btn btn-outline" data-open-robbie>Talk to sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══════════════════════════════════════════════════ -->
+  <section id="faq" class="faq section-pad">
+    <div class="wrap wrap-narrow">
+      <div class="sec-head" data-reveal>
+        <p class="sec-kicker mono">Questions</p>
+        <h2 class="sec-title">Everything buyers ask<br />before they start.</h2>
+      </div>
+      <div class="faq-list" data-reveal style="--d:.1s"></div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ════════════════════════════════════════════ -->
+  <section id="cta-final" class="cta-final" aria-label="Get started">
+    <div class="media-layer" aria-hidden="true">
+      <video data-clip autoplay muted loop playsinline preload="metadata">
+        <source src="/video/command.mp4" type="video/mp4" />
+      </video>
+      <div class="media-veil cta-veil"></div>
+    </div>
+    <div class="cta-inner" data-reveal>
+      <p class="mono cta-kicker">Turn humanoid complexity into procurement clarity</p>
+      <h2>Meet your new co-founder.</h2>
+      <p class="cta-sub">Plug Robbie into your build and get a procurement OS that actually understands
+      how your robots are made. Less hunting for suppliers, more time iterating.</p>
+      <div class="cta-btns">
+        <button class="btn btn-primary btn-lg" data-open-robbie>Initiate the Partnership</button>
+        <a class="btn btn-dark-outline btn-lg" href="#flow">Start your procurement journey</a>
+      </div>
+      <p class="cta-micro mono">No procurement team required to start.</p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+  <footer class="footer" data-nav="dark">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="#0d1322"/><rect x="8" y="13" width="16" height="4.6" rx="2.3" fill="#3d7dff"/><circle cx="16" cy="23.4" r="1.7" fill="#ff7a1a"/></svg>
+          <span class="brand-name">HELLO ROBBIE</span>
+        </div>
+        <p>The autonomous procurement OS built strictly for robotics supply chains — understand every part, source every part.</p>
+      </div>
+      <div class="footer-col"><p class="mono">PLATFORM</p><a href="#dissect">Humanoid anatomy</a><a href="#product">Command center</a><a href="#explorer">Component intelligence</a><a href="#pricing">Pricing</a></div>
+      <div class="footer-col"><p class="mono">COMPANY</p><a href="#">About</a><a href="#">Supplier network</a><a href="#">Security</a><a href="#">Careers</a></div>
+      <div class="footer-col"><p class="mono">RESOURCES</p><a href="#faq">FAQ</a><a href="#">Buyer playbooks</a><a href="#">Compliance library</a><a href="#">API docs</a></div>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year"></span> Hello Robbie. Concept experience for hellorobbie.com.</p>
+      <p class="mono">DESIGNED FOR HUMANS BUYING HUMANOIDS</p>
+    </div>
+  </footer>
+
+  <!-- ══ ROBBIE MODAL ═════════════════════════════════════════ -->
+  <div id="robbie-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Hello, Robbie">
+    <div class="modal-panel glass-dark">
+      <button class="modal-x" data-close-modal aria-label="Close">×</button>
+      <div class="modal-head">
+        <span class="robbie-avatar"><i></i></span>
+        <div><strong>Hello, Robbie</strong><p class="mono">PROCUREMENT COPILOT · ONLINE</p></div>
+      </div>
+      <div class="modal-bubble">
+        Hi, I am Robbie. I can help you find the best suppliers and manage your
+        procurement end-to-end. Where should I send your access link?
+      </div>
+      <form>
+        <input type="email" required placeholder="work email" aria-label="Work email" />
+        <button class="btn btn-primary" type="submit">Request access</button>
+      </form>
+      <div class="modal-done" hidden>
+        <strong>You’re on the list.</strong>
+        <p>Robbie will reach out with your command-center access. Expect part-level intelligence within a day.</p>
+      </div>
+      <p class="modal-micro mono">Concept preview — no real emails are sent.</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
