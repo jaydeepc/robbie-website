@@ -79,10 +79,64 @@ function flow() {
   const cards = [...rail.children];
   const count = section.querySelector('.j-count');
   const bar = section.querySelector('.j-bar i');
+  const canvas = section.querySelector('.journey-canvas');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!cards.length) return;
 
   let targetP = 0, p = 0, active = -1, inView = false;
+
+  // ── scroll-synced background film (frame sequence, like the dissection) ──
+  const ctx = canvas?.getContext('2d');
+  let frames = [], frameCount = 0, VIDW = 1600, VIDH = 900, lastDrawn = -1;
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  function sizeCanvas() {
+    if (!canvas) return;
+    const w = canvas.parentElement.clientWidth, h = canvas.parentElement.clientHeight;
+    canvas.width = Math.round(w * DPR);
+    canvas.height = Math.round(h * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    lastDrawn = -1;
+  }
+  sizeCanvas();
+  window.addEventListener('resize', sizeCanvas);
+
+  if (canvas) {
+    fetch('/frames/journey/manifest.json')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('no manifest'))))
+      .then((man) => {
+        frameCount = man.count; VIDW = man.width; VIDH = man.height;
+        frames = new Array(frameCount).fill(null);
+        const order = [...Array(frameCount).keys()].sort(
+          (a, b) => ((a % 6 === 0 ? 0 : 1) - (b % 6 === 0 ? 0 : 1)) || a - b
+        );
+        for (const i of order) {
+          const img = new Image();
+          img.decoding = 'async';
+          img.src = `/frames/journey/f_${String(i + 1).padStart(3, '0')}.jpg`;
+          img.onload = () => { frames[i] = img; lastDrawn = -1; };
+        }
+      })
+      .catch(() => {});
+  }
+
+  function drawFilm() {
+    if (!ctx || !frameCount) return;
+    let idx = Math.round(p * (frameCount - 1));
+    idx = Math.max(0, Math.min(frameCount - 1, idx));
+    if (idx === lastDrawn) return;
+    let img = frames[idx];
+    if (!img) { // nearest loaded frame
+      for (let d = 1; d < frameCount && !img; d++) img = frames[idx - d] || frames[idx + d];
+      if (!img) return;
+    }
+    const w = canvas.parentElement.clientWidth, h = canvas.parentElement.clientHeight;
+    const scale = Math.max(w / VIDW, h / VIDH);
+    const dw = VIDW * scale, dh = VIDH * scale;
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+    lastDrawn = idx;
+  }
 
   new IntersectionObserver((es) => { inView = es[es.length - 1].isIntersecting; }, { rootMargin: '10% 0px' })
     .observe(section);
@@ -124,6 +178,7 @@ function flow() {
       if (count) count.textContent = `${String(nearest + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
     }
     if (bar) bar.style.transform = `scaleX(${p.toFixed(4)})`;
+    drawFilm();
   }
 
   (function loop() {
