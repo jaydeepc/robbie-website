@@ -51,6 +51,23 @@ h1, h2, h3, h4 { font-family: var(--font-d); font-weight: 620; letter-spacing: -
 .wrap-narrow { max-width: 860px; }
 .section-pad { padding: 118px 0; }
 
+/* ═══ EXPERIENCE PRELOADER ═══ */
+body.locked { overflow: hidden; }
+#preloader {
+  position: fixed; inset: 0; z-index: 400;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+  background: radial-gradient(120% 90% at 50% 38%, #0b1120 0%, var(--bg-0) 62%);
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+#preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.pl-logo { height: 40px; width: auto; opacity: 0.92; }
+.pl-num-wrap { display: flex; align-items: baseline; gap: 4px; font-family: var(--font-d); }
+.pl-num { font-size: clamp(4.4rem, 11vw, 8rem); font-weight: 680; letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; background: linear-gradient(180deg, #ffffff 30%, rgba(190, 212, 255, 0.6)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pl-pct { font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 620; color: var(--blue-2); }
+.pl-label { color: rgba(170, 195, 240, 0.55); letter-spacing: 0.34em; font-size: 10.5px; }
+.pl-bar { display: block; width: min(280px, 60vw); height: 2px; border-radius: 2px; background: rgba(126, 172, 255, 0.16); overflow: hidden; }
+.pl-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--blue-2)); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 12px var(--blue-glow); }
+
 /* film grain */
 .grain {
   position: fixed; inset: -60px; z-index: 140; pointer-events: none; opacity: 0.045;
